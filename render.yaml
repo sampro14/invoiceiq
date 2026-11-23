@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: invoiceiq
+    runtime: docker
+    plan: free
+    healthCheckPath: /healthz
+    # Deploys only after every check on main, including the eval gate, has passed.
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: LANGFUSE_PUBLIC_KEY
+        sync: false
+      - key: LANGFUSE_SECRET_KEY
+        sync: false
+      - key: LANGFUSE_BASE_URL
+        value: https://cloud.langfuse.com
+      # Render sits behind Cloudflare, which sets this header itself on every request.
+      - key: TRUSTED_IP_HEADER
+        value: cf-connecting-ip
+      - key: RUNS_PER_IP_PER_HOUR
+        value: "5"
+      - key: RUNS_PER_DAY
+        value: "50"
+      # Abuse switch: set to "false" to leave only the samples.
+      - key: UPLOADS_ENABLED
+        value: "true"
+      # https://<user>.github.io (no path), so the landing page may ping /healthz.
+      - key: LANDING_ORIGIN
+        sync: false
+      # https://<user>.github.io/<repo>/results/latest.json
+      - key: EVAL_REPORT_URL
+        sync: false

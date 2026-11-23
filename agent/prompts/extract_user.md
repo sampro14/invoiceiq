@@ -1,0 +1,1 @@
+Extract the document {where}.

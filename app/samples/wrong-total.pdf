@@ -1,0 +1,269 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document (opensource)
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/Contents 8 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 7 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+5 0 obj
+<<
+/PageMode /UseNone /Pages 7 0 R /Type /Catalog
+>>
+endobj
+6 0 obj
+<<
+/Author (anonymous) /CreationDate (D:20000101000000+00'00') /Creator (anonymous) /Keywords () /ModDate (D:20000101000000+00'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (unspecified) /Title (Invoice INV/25-28/7552) /Trapped /False
+>>
+endobj
+7 0 obj
+<<
+/Count 1 /Kids [ 4 0 R ] /Type /Pages
+>>
+endobj
+8 0 obj
+<<
+/Length 6292
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+.113725 .152941 .2 rg
+BT /F2 15 Tf 18 TL ET
+BT 1 0 0 1 196.3653 785.8898 Tm (Malabar Engineering Pvt Ltd) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 8.5 Tf 10.2 TL ET
+BT 1 0 0 1 217.555 771.8898 Tm (Plot 19, GIDC, Pune, Maharashtra 266230) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 8.5 Tf 10.2 TL ET
+BT 1 0 0 1 241.899 758.8898 Tm (GSTIN: 27HGPNW3750K1ZJ) Tj T* ET
+.113725 .152941 .2 rg
+BT /F2 11 Tf 13.2 TL ET
+BT 1 0 0 1 262.4928 737.8898 Tm (TAX INVOICE) Tj T* ET
+.2 .2 .2 RG
+n 34 60 527.2756 741.8898 re S
+.2 .2 .2 rg
+BT /F2 8.5 Tf 10.2 TL ET
+BT 1 0 0 1 42 709.8898 Tm (Bill To) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 42 696.8898 Tm (Chaudry PLC) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 8.5 Tf 10.2 TL ET
+BT 1 0 0 1 42 684.8898 Tm (21 Ring Road, New Delhi) Tj T* ET
+.113725 .152941 .2 rg
+BT /F2 8.5 Tf 10.2 TL ET
+BT 1 0 0 1 363.2756 709.8898 Tm (Invoice No:) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 490.2396 709.8898 Tm (INV/25-28/7552) Tj T* ET
+.113725 .152941 .2 rg
+BT /F2 8.5 Tf 10.2 TL ET
+BT 1 0 0 1 363.2756 696.8898 Tm (Invoice Date:) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 507.2496 696.8898 Tm (15-03-2026) Tj T* ET
+.113725 .152941 .2 rg
+BT /F2 8.5 Tf 10.2 TL ET
+BT 1 0 0 1 363.2756 683.8898 Tm (Due Date:) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 507.2496 683.8898 Tm (29-04-2026) Tj T* ET
+.113725 .152941 .2 rg
+BT /F2 8.5 Tf 10.2 TL ET
+BT 1 0 0 1 363.2756 670.8898 Tm (PO No:) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 512.2536 670.8898 Tm (PO-97287) Tj T* ET
+.2 .2 .2 RG
+n 36 647.8898 m 559.2756 647.8898 l S
+n 36 630.8898 m 559.2756 630.8898 l S
+.2 .2 .2 rg
+BT /F2 8.5 Tf 10.2 TL ET
+BT 1 0 0 1 42 635.8898 Tm (#) Tj T* ET
+.2 .2 .2 rg
+BT /F2 8.5 Tf 10.2 TL ET
+BT 1 0 0 1 66 635.8898 Tm (Description) Tj T* ET
+.2 .2 .2 rg
+BT /F2 8.5 Tf 10.2 TL ET
+BT 1 0 0 1 339.1061 635.8898 Tm (Qty) Tj T* ET
+.2 .2 .2 rg
+BT /F2 8.5 Tf 10.2 TL ET
+BT 1 0 0 1 412.1951 635.8898 Tm (Rate \(INR\)) Tj T* ET
+.2 .2 .2 rg
+BT /F2 8.5 Tf 10.2 TL ET
+BT 1 0 0 1 498.5101 635.8898 Tm (Amount \(INR\)) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 42 615.8898 Tm (1) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 66 615.8898 Tm (Hydraulic hose assembly 2 m) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 348.2716 615.8898 Tm (3) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 418.2476 615.8898 Tm (2,056.67) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 518.2476 615.8898 Tm (6,170.01) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 42 598.8898 Tm (2) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 66 598.8898 Tm (Pallet wrap film 23 micron) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 348.2716 598.8898 Tm (3) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 425.7536 598.8898 Tm (590.10) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 518.2476 598.8898 Tm (1,770.30) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 42 581.8898 Tm (3) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 66 581.8898 Tm (Corrugated carton 5-ply 450 x 300) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 348.2716 581.8898 Tm (6) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 418.2476 581.8898 Tm (1,489.54) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 518.2476 581.8898 Tm (8,937.24) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 42 564.8898 Tm (4) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 66 564.8898 Tm (Pressure gauge 0-10 bar) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 348.2716 564.8898 Tm (2) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 425.7536 564.8898 Tm (668.02) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 518.2476 564.8898 Tm (1,336.04) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 42 547.8898 Tm (5) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 66 547.8898 Tm (Lithium grease 500 g) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 348.2716 547.8898 Tm (8) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 418.2476 547.8898 Tm (3,839.19) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 513.2436 547.8898 Tm (30,713.52) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 42 530.8898 Tm (6) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 66 530.8898 Tm (Barcode labels 100 x 50, roll) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 348.2716 530.8898 Tm (3) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 418.2476 530.8898 Tm (4,751.79) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 513.2436 530.8898 Tm (14,255.37) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 42 513.8898 Tm (7) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 66 513.8898 Tm (Industrial safety gloves, pair) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 343.2676 513.8898 Tm (10) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 425.7536 513.8898 Tm (128.71) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 518.2476 513.8898 Tm (1,287.10) Tj T* ET
+.2 .2 .2 RG
+n 36 504.8898 m 559.2756 504.8898 l S
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 353.2756 488.8898 Tm (Subtotal) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 513.2436 488.8898 Tm (64,469.58) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 353.2756 472.8898 Tm (IGST 28%) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 513.2436 472.8898 Tm (18,051.48) Tj T* ET
+.113725 .152941 .2 rg
+BT /F2 10 Tf 12 TL ET
+BT 1 0 0 1 353.2756 456.8898 Tm (Grand Total) Tj T* ET
+.113725 .152941 .2 rg
+BT /F2 10 Tf 12 TL ET
+BT 1 0 0 1 488.7956 456.8898 Tm (INR 82,971.06) Tj T* ET
+.113725 .152941 .2 rg
+BT /F1 8 Tf 9.6 TL ET
+BT 1 0 0 1 42 426.8898 Tm (Payment by bank transfer within the due date. Goods once sold are not returned.) Tj T* ET
+ 
+endstream
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000061 00000 n 
+0000000102 00000 n 
+0000000209 00000 n 
+0000000321 00000 n 
+0000000524 00000 n 
+0000000592 00000 n 
+0000000867 00000 n 
+0000000926 00000 n 
+trailer
+<<
+/ID 
+[<99785c032b542e5014533d7fbfca6f8a><99785c032b542e5014533d7fbfca6f8a>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 6 0 R
+/Root 5 0 R
+/Size 9
+>>
+startxref
+7269
+%%EOF

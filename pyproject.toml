@@ -1,0 +1,63 @@
+[project]
+name = "invoiceiq"
+version = "0.1.0"
+description = "A LangGraph agent that turns invoices into validated, ERP-ready JSON and measures itself on every run."
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.165,<0.200",
+  "uvicorn>=0.54,<1",
+  "python-multipart>=0.0.34",
+  "httpx>=0.28,<1",
+  "langgraph>=1.2.24,<2",
+  "langgraph-checkpoint-sqlite>=3.1.3,<4",
+  "langfuse>=5.2,<6",
+  "pydantic>=2.14,<3",
+  "pydantic-settings>=2.16,<3",
+  # PyMuPDF 2.x pulls in onnxruntime (+~120 MB RSS), too much for a 512 MB instance.
+  "pymupdf>=1.28.2,<2",
+  "pillow>=13,<14",
+  "python-dateutil>=2.9",
+  # macOS python.org builds ship without CA roots; use the OS trust store instead.
+  "truststore>=0.10",
+  "tzdata>=2025.1",
+]
+
+[dependency-groups]
+eval = ["scipy>=1.18", "pyarrow>=26", "faker>=40", "reportlab>=5"]
+dev = ["pytest>=9", "pytest-asyncio>=1.5", "ruff>=0.17", "mypy>=2.4", "pre-commit>=4", "types-python-dateutil"]
+
+[tool.uv]
+default-groups = ["dev", "eval"]
+package = false
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+filterwarnings = ["ignore:builtin type .* has no __module__ attribute:DeprecationWarning"]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "RUF", "ASYNC", "S"]
+ignore = ["E501", "S101", "S311", "RUF001", "RUF002", "RUF003"]
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["fastapi.File", "fastapi.Form", "fastapi.Depends"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S"]
+"eval/*" = ["S"]
+"scripts/*" = ["S"]
+
+[tool.mypy]
+python_version = "3.12"
+files = ["agent", "app", "eval"]
+ignore_missing_imports = true
+check_untyped_defs = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+no_implicit_optional = true

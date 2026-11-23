@@ -1,0 +1,125 @@
+name: checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.4.0
+      - run: uv sync --frozen
+      - run: uv run ruff check .
+      - run: uv run ruff format --check .
+      - run: uv run mypy
+      - run: uv run pytest -q
+
+  secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@v10.4.0
+      - run: uv sync --frozen
+      # The pre-commit hook scans staged changes; this scans the whole history.
+      - run: uv run pre-commit run --all-files
+      - run: |
+          curl -sSfL https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz | tar xz -C "$RUNNER_TEMP" gitleaks
+          "$RUNNER_TEMP/gitleaks" git --redact --no-banner .
+
+  image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: docker build -t invoiceiq .
+      - run: |
+          docker run -d --name app -m 512m -p 8000:8000 invoiceiq
+          for i in $(seq 30); do curl -fs localhost:8000/healthz && break; sleep 1; done
+          curl -fs localhost:8000/healthz
+          run=$(curl -fs -F sample_id=clean localhost:8000/v1/extract | python3 -c 'import json,sys; print(json.load(sys.stdin)["run_id"])')
+          sleep 3
+          curl -fs localhost:8000/v1/runs/$run | python3 -c 'import json,sys; assert json.load(sys.stdin)["decision"] == "approved"'
+
+  smoke-eval:
+    runs-on: ubuntu-latest
+    # Free-tier pacing: 25 documents at 3 a minute, plus room for quota waits.
+    timeout-minutes: 45
+    env:
+      # Absent on pull requests from forks; the run is then offline and only compared with offline runs.
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.4.0
+      - run: uv sync --frozen
+      - uses: actions/cache@v6
+        with:
+          path: eval/datasets/cache
+          key: eval-data-${{ hashFiles('eval/datasets/sources.py', 'eval/datasets/manifests/smoke.json') }}
+      - id: mode
+        run: |
+          if [ -n "$GEMINI_API_KEY" ]; then echo "mode=live" >> "$GITHUB_OUTPUT"; echo "rpm=3" >> "$GITHUB_OUTPUT"
+          else echo "mode=offline" >> "$GITHUB_OUTPUT"; echo "rpm=0" >> "$GITHUB_OUTPUT"; fi
+      - run: uv run python -m eval.run_eval --set smoke --systems agent --rpm "$RPM" --out smoke.json
+        env:
+          RPM: ${{ steps.mode.outputs.rpm }}
+      - name: Compare with the last run on main
+        run: |
+          git fetch --depth=1 origin gh-pages && git show "FETCH_HEAD:results/latest-smoke-$MODE.json" > previous.json || rm -f previous.json
+          uv run python -m eval.gate --current smoke.json --main previous.json
+        env:
+          MODE: ${{ steps.mode.outputs.mode }}
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: smoke-report
+          path: smoke.json
+          if-no-files-found: ignore
+
+  publish:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [test, secrets, image, smoke-eval]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.4.0
+      - run: uv sync --frozen
+      - uses: actions/download-artifact@v7
+        with:
+          name: smoke-report
+          path: new
+      - name: Build the site from every result so far
+        run: |
+          mkdir -p all
+          if git fetch --depth=1 origin gh-pages; then git worktree add pages FETCH_HEAD && cp pages/results/*.json all/ 2>/dev/null || true; fi
+          rm -f all/latest*.json
+          find eval/results -maxdepth 1 -name '*.json' ! -name 'latest*' -exec cp {} all/ \;
+          cp new/smoke.json "all/$GITHUB_SHA-smoke.json"
+          uv run python -m eval.report --results all --out _site --app-url "$APP_URL"
+          touch _site/.nojekyll
+        env:
+          APP_URL: ${{ vars.APP_URL || 'http://localhost:8000' }}
+      - name: Push to gh-pages
+        run: |
+          cd _site
+          git init -q -b gh-pages
+          git config user.name github-actions
+          git config user.email github-actions@users.noreply.github.com
+          git add -A
+          git commit -qm "Report for $GITHUB_SHA"
+          git push -q --force "https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,152 @@
+[
+ {
+  "id": "adv-degraded-00",
+  "dataset": "adversarial",
+  "lock": "f4d89c0121801c8dcc9d1cb1215dbbc96d745da37bddad10d9c6be2a4d9bd809"
+ },
+ {
+  "id": "adv-degraded-01",
+  "dataset": "adversarial",
+  "lock": "fe422cd25a89d1cbfb297da2bf77e2e4a5c81b41f2a59a3f0dc9cca965f646d7"
+ },
+ {
+  "id": "adv-degraded-02",
+  "dataset": "adversarial",
+  "lock": "92843b772034724c4aa41b592571452ac2ee3a5bf5b29cc6693bcdb79b4a2928"
+ },
+ {
+  "id": "adv-degraded-03",
+  "dataset": "adversarial",
+  "lock": "9320d8948cbe277ef5b2996d62c9f58b792f5f525beb81e7c55dad618f7ed326"
+ },
+ {
+  "id": "adv-degraded-04",
+  "dataset": "adversarial",
+  "lock": "fede9992c3803dfb46d4f79b57627ff240b5eee894fcfc6c0dd3326724e8bd2d"
+ },
+ {
+  "id": "adv-degraded-05",
+  "dataset": "adversarial",
+  "lock": "273b2a6376b3c5b24577de0bed864bc2b9fdd5411bc9ce60e3e5ee87a0dde0f6"
+ },
+ {
+  "id": "adv-degraded-06",
+  "dataset": "adversarial",
+  "lock": "45d80014498b7e161b2153953a1648105ea25495026339c34634b0c6331e46cc"
+ },
+ {
+  "id": "adv-degraded-07",
+  "dataset": "adversarial",
+  "lock": "9488e9e60b1af4022e7eeea00983e034ded82293fe46d81ca891d4adf7646803"
+ },
+ {
+  "id": "adv-error-00-total",
+  "dataset": "adversarial",
+  "lock": "061422eaa2baa49d0e14120a587e59299d0aa86edcc8dc39caf0081868221fd7"
+ },
+ {
+  "id": "adv-error-01-total",
+  "dataset": "adversarial",
+  "lock": "cb4b1e3b746c807af4f16ec324a33001ace0af5b6dc652030865b2a837ae76c1"
+ },
+ {
+  "id": "adv-error-02-total",
+  "dataset": "adversarial",
+  "lock": "0d22311062b8536834cb02c62ac20cfc9ef5946d8a76b8e299dc2ef0d765542c"
+ },
+ {
+  "id": "adv-error-03-subtotal",
+  "dataset": "adversarial",
+  "lock": "6ed2c12b8fba8401c3e4014fb1a5a2350625165025aa149a6a75cc1e63012788"
+ },
+ {
+  "id": "adv-error-04-subtotal",
+  "dataset": "adversarial",
+  "lock": "55e77cff8d4045184e3730a6b171889b3423cd3f074ca4fd89c834fe35f6a0c4"
+ },
+ {
+  "id": "adv-error-05-line",
+  "dataset": "adversarial",
+  "lock": "da7fe6df36f7a696126650afb3a4064e5d9c009c1d20181b59c53209987a5359"
+ },
+ {
+  "id": "adv-error-06-line",
+  "dataset": "adversarial",
+  "lock": "db38067a4e9c770c3fcaab9087928e6c2d59a896929e46b4b560143f7d51cc15"
+ },
+ {
+  "id": "adv-error-07-missing_tax",
+  "dataset": "adversarial",
+  "lock": "26eaf33ef092efd88777cf18d0f10a100c3f84d3479a51707bf3c270179c7536"
+ },
+ {
+  "id": "adv-error-08-missing_tax",
+  "dataset": "adversarial",
+  "lock": "2176a33f649898cb1a56ca6707830343400f49214059eb94026e6a0b6f39c4f5"
+ },
+ {
+  "id": "adv-error-09-tax_id",
+  "dataset": "adversarial",
+  "lock": "1dfe211a225b66b75502f097fe81b5ef285d02ae73ccd159acb1e8ee32b55e90"
+ },
+ {
+  "id": "adv-error-10-tax_id",
+  "dataset": "adversarial",
+  "lock": "d8b0d281220394e03b35b86ecc1cecc4d02b7c8c9536c66619ec6119ec0dc0d4"
+ },
+ {
+  "id": "adv-error-11-due_date",
+  "dataset": "adversarial",
+  "lock": "87d0e59af8169a67914621bd4054614bfd496995385c88080ebd7fe78ef229f0"
+ },
+ {
+  "id": "adv-injection-00",
+  "dataset": "adversarial",
+  "lock": "b670154662b9b8c650822b2d13e9eb70af5c87754262d8c91dd5dfa3e878542b"
+ },
+ {
+  "id": "adv-injection-01",
+  "dataset": "adversarial",
+  "lock": "766cee3a840710c551fffd133915b0b5508a4f2f608f1600d5afc34f47161965"
+ },
+ {
+  "id": "adv-injection-02",
+  "dataset": "adversarial",
+  "lock": "2d31f03fff185efb1ccb94e9dbfd3bbd4d480ed10eba381844e09c6bedcdbeac"
+ },
+ {
+  "id": "adv-injection-03",
+  "dataset": "adversarial",
+  "lock": "6912fab5453c4dbd4d88f9a5a6a1f88b0f3ffc61460b9fae8fc8cf4109570a26"
+ },
+ {
+  "id": "adv-injection-04",
+  "dataset": "adversarial",
+  "lock": "b43df97b5c93c7b8a4855dbb341cc87bbf1dab049e3418cef8cffa8a3f973131"
+ },
+ {
+  "id": "adv-injection-05",
+  "dataset": "adversarial",
+  "lock": "c411e39599524b045e0515291692d3a7f2275f19e998dc11e2f8962f662c0443"
+ },
+ {
+  "id": "adv-injection-06",
+  "dataset": "adversarial",
+  "lock": "f45309e0182546abbee792182ad0f88e3fc0d9f3c993d6788821d771827179ed"
+ },
+ {
+  "id": "adv-injection-07",
+  "dataset": "adversarial",
+  "lock": "a8ba9743537b2f24b9db56afe536a1e030a554fe34696a949e92cffb239a9ab5"
+ },
+ {
+  "id": "adv-injection-08",
+  "dataset": "adversarial",
+  "lock": "824bbbf3c0962092e9caa62f6e6ca90afae56622ac4322a5ebfde8eb8d83017f"
+ },
+ {
+  "id": "adv-injection-09",
+  "dataset": "adversarial",
+  "lock": "d1915d24c6467758cf7e2e7c1664ce014b6e7525781938bd735f1acda09de54b"
+ }
+]

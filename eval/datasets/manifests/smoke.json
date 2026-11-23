@@ -1,0 +1,162 @@
+[
+ {
+  "id": "adv-degraded-00",
+  "dataset": "adversarial",
+  "lock": "f4d89c0121801c8dcc9d1cb1215dbbc96d745da37bddad10d9c6be2a4d9bd809"
+ },
+ {
+  "id": "adv-error-00-total",
+  "dataset": "adversarial",
+  "lock": "061422eaa2baa49d0e14120a587e59299d0aa86edcc8dc39caf0081868221fd7"
+ },
+ {
+  "id": "adv-error-09-tax_id",
+  "dataset": "adversarial",
+  "lock": "1dfe211a225b66b75502f097fe81b5ef285d02ae73ccd159acb1e8ee32b55e90"
+ },
+ {
+  "id": "adv-injection-00",
+  "dataset": "adversarial",
+  "lock": "b670154662b9b8c650822b2d13e9eb70af5c87754262d8c91dd5dfa3e878542b"
+ },
+ {
+  "id": "adv-injection-02",
+  "dataset": "adversarial",
+  "lock": "2d31f03fff185efb1ccb94e9dbfd3bbd4d480ed10eba381844e09c6bedcdbeac"
+ },
+ {
+  "id": "cord-038",
+  "dataset": "cord",
+  "file": "cord",
+  "row": 38,
+  "lock": "1b56193f21babf426e7ae0f86d293720514f317d4dd35ed4786c79abd7b47145"
+ },
+ {
+  "id": "cord-064",
+  "dataset": "cord",
+  "file": "cord",
+  "row": 64,
+  "lock": "9a6eca06fa9f693288dc2eeb06577b299b94e7df528788b81e9731343da524d0"
+ },
+ {
+  "id": "cord-065",
+  "dataset": "cord",
+  "file": "cord",
+  "row": 65,
+  "lock": "8d67a9d056d9b7b9b5904b736cb714afe636f93165e3b7d2157f4e81a789449b"
+ },
+ {
+  "id": "cord-069",
+  "dataset": "cord",
+  "file": "cord",
+  "row": 69,
+  "lock": "bb7ce8bca9f98d2359806f49afa2b3c2eb1254fa86d96338c6cc1a42c8b3306a"
+ },
+ {
+  "id": "cord-080",
+  "dataset": "cord",
+  "file": "cord",
+  "row": 80,
+  "lock": "7caf2ca8d4b3391b61ff8118961a1837ec2f5bc0bc060dc7fa19907a41c8b34f"
+ },
+ {
+  "id": "fatura-Template13-Instance35",
+  "dataset": "fatura",
+  "file": "fatura-train",
+  "row": 329,
+  "lock": "f972cd96d1487c36db12895ceeafef1aa02a09c71722a3e8d0a8b5eeb0b7ae39"
+ },
+ {
+  "id": "fatura-Template14-Instance118",
+  "dataset": "fatura",
+  "file": "fatura-train",
+  "row": 422,
+  "lock": "be9eff11e57233686513ec51c8d3a42170145ffb87d16fc32d5081351c4b767e"
+ },
+ {
+  "id": "fatura-Template15-Instance23",
+  "dataset": "fatura",
+  "file": "fatura-train",
+  "row": 716,
+  "lock": "f01aed65f662df87cd668420161325d7257b16e3821e73a0dc318a7a02540ee6"
+ },
+ {
+  "id": "fatura-Template4-Instance95",
+  "dataset": "fatura",
+  "file": "fatura-train",
+  "row": 7595,
+  "lock": "a5a691925678ce9f9aa1dbb380dc1d0a1f9910d4fc98d27df9cc664d8a2cc69d"
+ },
+ {
+  "id": "fatura-Template9-Instance87",
+  "dataset": "fatura",
+  "file": "fatura-train",
+  "row": 8586,
+  "lock": "5c7e92623bf07522d8ee5b652e7e263c56ad11dc99daec538e52d83b970d8b7f"
+ },
+ {
+  "id": "gst-016",
+  "dataset": "gst",
+  "seed": 16,
+  "lock": "1f97b1bbf931ee86cacb6036a3a988859693ae11c7aaf2d52d36342fe54fab8b"
+ },
+ {
+  "id": "gst-037",
+  "dataset": "gst",
+  "seed": 37,
+  "lock": "732eca68d0efe439939aca5d3ee28d7a4afe0cdf79bde3286d41e52ca34635e8"
+ },
+ {
+  "id": "gst-039",
+  "dataset": "gst",
+  "seed": 39,
+  "lock": "5a68a846784b6e44ffc3840b46651dfbbc2bfba6c02b37330518b8a60e3c49fa"
+ },
+ {
+  "id": "gst-047",
+  "dataset": "gst",
+  "seed": 47,
+  "lock": "555c3a45521a30f50dd29d55906f085a32eab663c315c5a05c8b7684a29ff38c"
+ },
+ {
+  "id": "gst-048",
+  "dataset": "gst",
+  "seed": 48,
+  "lock": "775b096fd326a4f76ed492bae3f37657b61d983422ecedfea49b66e5d5ab86da"
+ },
+ {
+  "id": "sroie-X51005719895",
+  "dataset": "sroie",
+  "file": "sroie",
+  "row": 96,
+  "lock": "b063e09115db95473a2a090d1c7a3cf95be884898b53e2c68459333bb5403dd0"
+ },
+ {
+  "id": "sroie-X51006619338",
+  "dataset": "sroie",
+  "file": "sroie",
+  "row": 237,
+  "lock": "e2abf9970d08a0ed3e99debfccb85819594998ca58bf355a88aa3b2e470b4a4c"
+ },
+ {
+  "id": "sroie-X51006619703",
+  "dataset": "sroie",
+  "file": "sroie",
+  "row": 249,
+  "lock": "2810d86c24fc80d33db6598aeb38d5826f3a78b658d0815e192e1e3a59064207"
+ },
+ {
+  "id": "sroie-X51006857137",
+  "dataset": "sroie",
+  "file": "sroie",
+  "row": 276,
+  "lock": "e3d3361f9562fbdd9fcf345d285dea08af17d5a6669f7e2347654495c17cde78"
+ },
+ {
+  "id": "sroie-X51008099100",
+  "dataset": "sroie",
+  "file": "sroie",
+  "row": 355,
+  "lock": "9d67e16800437435db55330fa6c830d792683fe01d61d734baa91dbf74959e7a"
+ }
+]

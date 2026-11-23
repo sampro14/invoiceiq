@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InvoiceIQ: invoice to validated JSON</title>
+  <meta name="description" content="Upload an invoice and get validated, ERP-ready JSON, with confidence, checks, cost and latency shown on every run.">
+  <link rel="icon" href="/static/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/">Invoice<b>IQ</b></a>
+    <nav aria-label="Main">
+      <a href="#evidence">Accuracy</a>
+      <a href="/docs">API</a>
+      <span id="mode" class="pill" hidden></span>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>Invoice in, checked data out.</h1>
+      <p>Two models read the document independently, rules in code check the arithmetic, dates and tax IDs, and anything doubtful stops and asks a person.</p>
+    </section>
+
+    <section aria-labelledby="start-h" id="start">
+      <h2 id="start-h">Try a sample</h2>
+      <div id="samples" class="samples"></div>
+      <div id="drop" class="drop">
+        <input id="file" type="file" accept=".pdf,.png,.jpg,.jpeg,application/pdf,image/png,image/jpeg">
+        <label for="file"><b>Choose an invoice</b> or drop one here</label>
+        <p id="upload-note" class="note"></p>
+        <p id="privacy" class="note"></p>
+      </div>
+      <p id="start-error" class="error" role="alert" hidden></p>
+    </section>
+
+    <section id="run" aria-labelledby="run-h" hidden>
+      <div class="run-head">
+        <h2 id="run-h" tabindex="-1"></h2>
+        <button type="button" id="again" class="quiet">Try another</button>
+      </div>
+
+      <ol id="rail" class="rail" aria-label="Path through the agent graph"></ol>
+
+      <div id="verdict" class="verdict" role="status" aria-live="polite"></div>
+
+      <div class="bench">
+        <figure id="preview" class="preview"></figure>
+        <div class="sheet">
+          <form id="fields-form" autocomplete="off">
+            <div id="fields"></div>
+            <div id="lines"></div>
+            <div id="review" class="review" hidden></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="after">
+        <div>
+          <h3>Checks</h3>
+          <ul id="checks" class="checks"></ul>
+        </div>
+        <div>
+          <h3>This run</h3>
+          <dl id="metrics" class="metrics"></dl>
+          <div id="calls"></div>
+          <p id="trace"></p>
+        </div>
+      </div>
+
+      <details id="json-box" hidden>
+        <summary>JSON for your ERP</summary>
+        <button type="button" id="copy" class="quiet">Copy JSON</button>
+        <pre id="json" tabindex="0"></pre>
+      </details>
+    </section>
+
+    <section id="evidence" aria-labelledby="ev-h">
+      <h2 id="ev-h">Measured accuracy</h2>
+      <div id="eval"><p class="note">Loading the latest report…</p></div>
+    </section>
+  </main>
+
+  <noscript><p class="error">This demo needs JavaScript. The API is documented at <a href="/docs">/docs</a>.</p></noscript>
+  <script src="/static/app.js" type="module"></script>
+</body>
+</html>

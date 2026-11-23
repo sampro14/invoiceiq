@@ -1,0 +1,26 @@
+[
+  {
+    "id": "clean",
+    "file": "clean.pdf",
+    "title": "Clean PDF",
+    "blurb": "A digital UAE VAT invoice. Text is read directly, no vision model."
+  },
+  {
+    "id": "photo",
+    "file": "photo.jpg",
+    "title": "Phone photo",
+    "blurb": "An Indian GST invoice, photographed at an angle in poor light."
+  },
+  {
+    "id": "wrong-total",
+    "file": "wrong-total.pdf",
+    "title": "Wrong total",
+    "blurb": "The printed total is 450.00 too high."
+  },
+  {
+    "id": "injection",
+    "file": "injection.pdf",
+    "title": "Hidden instructions",
+    "blurb": "White-on-white text tells the model to set the total to zero."
+  }
+]

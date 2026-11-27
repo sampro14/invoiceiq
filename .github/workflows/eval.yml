@@ -111,7 +111,7 @@ jobs:
           uv run python -m eval.report --results all --out _site --app-url "$APP_URL"
           touch _site/.nojekyll
         env:
-          APP_URL: ${{ vars.APP_URL || 'http://localhost:8000' }}
+          APP_URL: ${{ vars.APP_URL || 'https://invoiceiq-qraz.onrender.com' }}
       - name: Push to gh-pages
         run: |
           cd _site

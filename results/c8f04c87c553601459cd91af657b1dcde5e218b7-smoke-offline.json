@@ -1,0 +1,121 @@
+{
+ "git_sha": "c8f04c87c553601459cd91af657b1dcde5e218b7",
+ "created_at": "2026-11-23T12:00:40+00:00",
+ "mode": "offline",
+ "set": "smoke",
+ "n_docs": 25,
+ "fingerprint": "35f59b49ff07",
+ "manifest_sha256": "8aaf5c66121dbbfb298280c0c5118aee3ac4061a210ba62dd57678f903f6a140",
+ "models": {
+  "reader": "offline-rules",
+  "second_text": "offline-anchors"
+ },
+ "targets": {
+  "field_f1": "\u2265 0.90",
+  "doc_exact": "\u2265 80%",
+  "line_item_f1": "\u2265 0.85",
+  "catch_rate": "\u2265 95%",
+  "false_flag_rate": "\u2264 10%",
+  "ece": "\u2264 0.05",
+  "injection_changed": "0",
+  "latency_p50_ms": "\u2264 10 s",
+  "latency_p95_ms": "\u2264 20 s",
+  "cost_per_doc_usd": "< $0.00200"
+ },
+ "systems": {
+  "agent": {
+   "overall": {
+    "n": 20,
+    "field_f1": 0.4799999999999999,
+    "doc_exact": 0.15,
+    "line_item_f1": 0.5217391304347826,
+    "ece": 0.016000000000000014,
+    "approved_exact": 1.0,
+    "review_rate": 0.0,
+    "failed": 17,
+    "latency_p50_ms": 31.913926999997955,
+    "latency_p95_ms": 299.9526839999973,
+    "cost_per_doc_usd": 0.0,
+    "tokens_per_doc": 0.0,
+    "catch_rate": 1.0,
+    "catch_n": 2,
+    "false_flag_n": 3,
+    "false_flag_rate": 0.0,
+    "injection_flagged": 1.0,
+    "injection_changed": 0
+   },
+   "by_dataset": {
+    "adversarial": {
+     "n": 5,
+     "field_f1": 0.8910891089108911,
+     "doc_exact": 0.8,
+     "line_item_f1": 0.9473684210526316,
+     "ece": 0.02512820512820514,
+     "approved_exact": null,
+     "review_rate": 0.8,
+     "failed": 1,
+     "latency_p50_ms": 29.736079999999276,
+     "latency_p95_ms": 34.54640199999659,
+     "cost_per_doc_usd": 0.0,
+     "tokens_per_doc": 0.0
+    },
+    "cord": {
+     "n": 5,
+     "field_f1": 0.0,
+     "doc_exact": 0.0,
+     "line_item_f1": 0.0,
+     "ece": null,
+     "approved_exact": null,
+     "review_rate": 0.0,
+     "failed": 5,
+     "latency_p50_ms": 85.8885390000026,
+     "latency_p95_ms": 337.257711999996,
+     "cost_per_doc_usd": 0.0,
+     "tokens_per_doc": 0.0
+    },
+    "fatura": {
+     "n": 5,
+     "field_f1": 0.0,
+     "doc_exact": 0.0,
+     "line_item_f1": null,
+     "ece": null,
+     "approved_exact": null,
+     "review_rate": 0.0,
+     "failed": 5,
+     "latency_p50_ms": 5.728334000004054,
+     "latency_p95_ms": 6.3373999999996045,
+     "cost_per_doc_usd": 0.0,
+     "tokens_per_doc": 0.0
+    },
+    "gst": {
+     "n": 5,
+     "field_f1": 0.7659574468085107,
+     "doc_exact": 0.6,
+     "line_item_f1": 0.7499999999999999,
+     "ece": 0.016000000000000014,
+     "approved_exact": 1.0,
+     "review_rate": 0.0,
+     "failed": 2,
+     "latency_p50_ms": 18.12431300000128,
+     "latency_p95_ms": 79.27880100000095,
+     "cost_per_doc_usd": 0.0,
+     "tokens_per_doc": 0.0
+    },
+    "sroie": {
+     "n": 5,
+     "field_f1": 0.0,
+     "doc_exact": 0.0,
+     "line_item_f1": null,
+     "ece": null,
+     "approved_exact": null,
+     "review_rate": 0.0,
+     "failed": 5,
+     "latency_p50_ms": 46.2426259999944,
+     "latency_p95_ms": 63.76720100000455,
+     "cost_per_doc_usd": 0.0,
+     "tokens_per_doc": 0.0
+    }
+   }
+  }
+ }
+}

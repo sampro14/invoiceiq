@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InvoiceIQ: measured accuracy</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <main>
+    <p class="brand"><a href="index.html">Invoice<b>IQ</b></a></p>
+    <h1>Measured accuracy</h1>
+    <p>The same documents go through one prompt to one model, and through the full agent. Both are scored by code against a frozen, hash-locked set.</p>
+    <p class="empty">The held-out evaluation has not been run with live models yet. Numbers appear here only after it has.</p>
+    <h2>Every change to main</h2>
+    <p>A 25-document smoke set runs on each pull request. A change is blocked if field F1 drops more than 2 points, fully correct documents drop more than 3 points, or p95 latency rises more than 25%.</p>
+    <p class="empty">These runs used rule-based stand-ins, because CI has no model keys. They show that the pipeline works, not how accurate the models are.</p><p class="legend"><span class="k1"></span>Field F1 <span class="k2"></span>Documents fully correct</p><svg class="chart" viewBox="0 0 720 240" role="img" aria-label="Smoke-set accuracy on main over time; values are in the table"><line x1="44" x2="600" y1="212" y2="212" class="grid"/><text x="36" y="216" class="lab" text-anchor="end">0.00</text><line x1="44" x2="600" y1="162.0" y2="162.0" class="grid"/><text x="36" y="166.0" class="lab" text-anchor="end">0.25</text><line x1="44" x2="600" y1="112.0" y2="112.0" class="grid"/><text x="36" y="116.0" class="lab" text-anchor="end">0.50</text><line x1="44" x2="600" y1="62.0" y2="62.0" class="grid"/><text x="36" y="66.0" class="lab" text-anchor="end">0.75</text><line x1="44" x2="600" y1="12" y2="12" class="grid"/><text x="36" y="16" class="lab" text-anchor="end">1.00</text><polyline class="l1" points="44.0,116.0 183.0,116.0 322.0,116.0 461.0,116.0 600.0,116.0"/><circle class="s1 ring" cx="44.0" cy="116.0" r="4" tabindex="0" data-tip="Field F1: 0.480, 2026-11-23, commit 8e1077a"/><circle class="s1 ring" cx="183.0" cy="116.0" r="4" tabindex="0" data-tip="Field F1: 0.480, 2026-11-23, commit c8f04c8"/><circle class="s1 ring" cx="322.0" cy="116.0" r="4" tabindex="0" data-tip="Field F1: 0.480, 2026-11-27, commit 976df04"/><circle class="s1 ring" cx="461.0" cy="116.0" r="4" tabindex="0" data-tip="Field F1: 0.480, 2026-11-27, commit 98f77e7"/><circle class="s1 ring" cx="600.0" cy="116.0" r="4" tabindex="0" data-tip="Field F1: 0.480, 2026-11-27, commit 20f7d59"/><polyline class="l2" points="44.0,182.0 183.0,182.0 322.0,182.0 461.0,182.0 600.0,182.0"/><circle class="s2 ring" cx="44.0" cy="182.0" r="4" tabindex="0" data-tip="Fully correct: 0.150, 2026-11-23, commit 8e1077a"/><circle class="s2 ring" cx="183.0" cy="182.0" r="4" tabindex="0" data-tip="Fully correct: 0.150, 2026-11-23, commit c8f04c8"/><circle class="s2 ring" cx="322.0" cy="182.0" r="4" tabindex="0" data-tip="Fully correct: 0.150, 2026-11-27, commit 976df04"/><circle class="s2 ring" cx="461.0" cy="182.0" r="4" tabindex="0" data-tip="Fully correct: 0.150, 2026-11-27, commit 98f77e7"/><circle class="s2 ring" cx="600.0" cy="182.0" r="4" tabindex="0" data-tip="Fully correct: 0.150, 2026-11-27, commit 20f7d59"/><text x="612" y="120.0" class="val">Field F1</text><text x="612" y="186.0" class="val">Fully correct</text></svg><details><summary>Every run</summary><div class="scroll"><table><thead><tr><th scope="col">Date</th><th scope="col">Commit</th><th scope="col">Field F1</th><th scope="col">Fully correct</th><th scope="col">p95</th></tr></thead><tbody><tr><td>2026-11-27</td><td>20f7d59</td><td>0.480</td><td>15.0%</td><td>200 ms</td></tr><tr><td>2026-11-27</td><td>98f77e7</td><td>0.480</td><td>15.0%</td><td>235 ms</td></tr><tr><td>2026-11-27</td><td>976df04</td><td>0.480</td><td>15.0%</td><td>260 ms</td></tr><tr><td>2026-11-23</td><td>c8f04c8</td><td>0.480</td><td>15.0%</td><td>300 ms</td></tr><tr><td>2026-11-23</td><td>8e1077a</td><td>0.480</td><td>15.0%</td><td>242 ms</td></tr></tbody></table></div></details>
+    <h2>How to read this</h2>
+    <ul>
+      <li>Only fields a dataset has ground truth for are scored. SROIE labels four fields and CORD labels no vendor or date.</li>
+      <li>FATURA invoices are generated with random due dates and totals that do not add up, so the agent is right to send many of them to review. They measure reading, not the false-flag rate, which comes from the synthetic GST invoices.</li>
+      <li>Addresses and line descriptions count as correct at 90% string similarity. Everything else must match exactly after normalising dates, amounts, case and spacing.</li>
+      <li>Documents the models could not process count as wrong, not as missing.</li>
+    </ul>
+    <p class="note">Data: CORD v2 (NAVER Clova, CC-BY-4.0), SROIE via the jsdnrs mirror (CC-BY-4.0), FATURA2 (CC-BY-4.0), and invoices generated for this project.</p>
+  </main>
+  <div id="tip" role="tooltip" hidden></div>
+  <script src="site.js"></script>
+</body>
+</html>

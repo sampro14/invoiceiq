@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InvoiceIQ: waking the agent</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body data-app="https://invoiceiq-qraz.onrender.com">
+  <main class="wake">
+    <p class="brand">Invoice<b>IQ</b></p>
+    <h1>Invoice in, checked data out.</h1>
+    <p>A LangGraph agent that reads an invoice with two models, checks it with rules in code, and stops to ask a person when something is off.</p>
+    <p id="status" role="status" class="status">Waking the agent, about 30 to 60 seconds. It sleeps when nobody is using it.</p>
+    <div class="track" aria-hidden="true"><i id="bar"></i></div>
+    <p><a id="open" href="https://invoiceiq-qraz.onrender.com">Open the app</a> · <a href="eval.html">See how accurate it is</a></p>
+  </main>
+  <script src="wake.js"></script>
+</body>
+</html>

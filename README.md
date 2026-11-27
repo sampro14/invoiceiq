@@ -1,4 +1,8 @@
+<div align="center">
+
 # InvoiceIQ
+
+**Invoice PDFs, scans and phone photos in. Validated, ERP-ready JSON out, approved only when two models and eight code-level checks agree.**
 
 [![checks](https://github.com/sampro14/invoiceiq/actions/workflows/eval.yml/badge.svg)](https://github.com/sampro14/invoiceiq/actions/workflows/eval.yml)
 ![Python 3.12](https://img.shields.io/badge/python-3.12-3776AB)
@@ -6,11 +10,23 @@
 ![Try it without a key](https://img.shields.io/badge/API%20key-not%20needed%20to%20try-brightgreen)
 [![License: MIT](https://img.shields.io/badge/license-MIT-slategray)](LICENSE)
 
-An agentic document-ops pipeline that turns an invoice (PDF, scan or phone photo) into **validated, ERP-ready JSON**, and shows its own confidence, rule checks, cost and latency on every run.
+**[▶ Try it in 30 seconds, no API key](#try-it-in-30-seconds-no-api-key)** · [How it works](#architecture) · [Design decisions](#design-decisions) · [Evaluation](#evaluation)
+
+<img src="docs/assets/review.png" alt="A wrong-total invoice paused for human review: the graph path, the reason, the document and the extracted fields with confidence bars" width="860" />
+
+</div>
+
+| **2 model families** | **8 checks in code** | **Human in the loop** | **Structural injection defence** |
+|:---:|:---:|:---:|:---:|
+| Gemini reads, Groq checks without seeing the first answer; any disagreement on a required field blocks approval | arithmetic, dates, ISO 4217 currency, India GSTIN and UAE TRN formats, never asked of a model | doubtful documents pause with LangGraph `interrupt()` and resume after a person approves or corrects them | document text is quoted data, the model has no tools, and its output is schema-locked |
+
+## The problem
 
 Most invoice extractors return JSON and hope it is right. InvoiceIQ reads every document with **two models from different families**, checks arithmetic, dates, currency and tax IDs **in code rather than by asking an LLM**, and only approves a document when both agree. Anything doubtful pauses the graph and asks a person, with the exact reason.
 
-### ▶ Try it in 30 seconds, no API key
+Every run shows its own confidence, rule checks, cost and latency, so you can see why a document was approved or sent to a person.
+
+## Try it in 30 seconds, no API key
 
 ```bash
 git clone https://github.com/sampro14/invoiceiq.git && cd invoiceiq
@@ -20,9 +36,7 @@ uv run python -m scripts.try_invoice app/samples/clean.pdf app/samples/wrong-tot
 
 Or open the web app with `uv run python -m uvicorn app.main:app` and go to http://localhost:8000. Without keys it runs in **offline mode**: rule-based readers stand in for the models, and the graph, checks, repair loop and human review are all real. Add a Gemini and a Groq key (both free) to read scans and photos.
 
-![A wrong-total invoice paused for human review: the graph path, the reason, the document and the extracted fields with confidence bars](docs/assets/review.png)
-
-## At a glance
+## What's inside
 
 - **Two independent readings.** Gemini reads, Groq checks, and the checker never sees the first answer. A disagreement on any required field blocks approval.
 - **Rules in code, not in the prompt.** Eight deterministic checks: lines sum to the subtotal, subtotal + tax = total, quantity × price, dates, India GSTIN and UAE TRN formats, ISO 4217 currency, required fields, and text aimed at the model.
@@ -121,19 +135,6 @@ uv run python -m eval.report                            # builds the report site
 - **Free tiers are slow for evals.** Groq's free plan allows about 200K tokens a day, roughly 80 documents, so the held-out set takes several days. Predictions are saved per document, and a stopped run resumes where it left off.
 - **Cost.** At list price a document costs about $0.0015 for the reader alone. The design target of $0.002 per document including the second opinion is tight, and the eval reports the real figure.
 
-## API
-
-Interactive docs at `/docs`.
-
-| Method and path | Does |
-|---|---|
-| `POST /v1/extract` | Upload a `file`, or name a `sample_id`. Returns a `run_id` |
-| `GET /v1/runs/{id}/events` | Live node-by-node progress (Server-Sent Events) |
-| `GET /v1/runs/{id}` | Fields, confidence, checks, decision, metrics, trace link |
-| `POST /v1/runs/{id}/review` | `{"action": "approve", "corrections": {"amounts.total": "82521.06"}}` |
-| `GET /v1/eval/latest` | The published eval report |
-| `GET /healthz` | Health check |
-
 ## Run it with real models
 
 ```bash
@@ -147,7 +148,26 @@ uv run ruff check . && uv run mypy
 docker build -t invoiceiq . && docker run -p 8000:8000 --env-file .env invoiceiq
 ```
 
-## Project layout
+## Reference
+
+<details>
+<summary><b>API</b></summary>
+
+Interactive docs at `/docs`.
+
+| Method and path | Does |
+|---|---|
+| `POST /v1/extract` | Upload a `file`, or name a `sample_id`. Returns a `run_id` |
+| `GET /v1/runs/{id}/events` | Live node-by-node progress (Server-Sent Events) |
+| `GET /v1/runs/{id}` | Fields, confidence, checks, decision, metrics, trace link |
+| `POST /v1/runs/{id}/review` | `{"action": "approve", "corrections": {"amounts.total": "82521.06"}}` |
+| `GET /v1/eval/latest` | The published eval report |
+| `GET /healthz` | Health check |
+
+</details>
+
+<details>
+<summary><b>Project layout</b></summary>
 
 | Path | What it holds |
 |---|---|
@@ -157,6 +177,8 @@ docker build -t invoiceiq . && docker run -p 8000:8000 --env-file .env invoiceiq
 | `scripts/` | Terminal demo, sample generator, and recording sample runs for quota-free replay |
 | `tests/` | Validators, routing, graph behaviour, API, tracing, metrics and the gate itself |
 | `.github/workflows/eval.yml` | Lint, types, tests, secret scan, Docker smoke test, eval gate, report publishing |
+
+</details>
 
 ## Privacy and limits
 
@@ -168,4 +190,4 @@ CORD v2 (NAVER Clova, CC-BY-4.0) · SROIE, ICDAR 2019, via [jsdnrs/ICDAR2019-SRO
 
 ---
 
-Built by [Sameer Atram](https://github.com/sampro14) · Applied AI Engineer · [LinkedIn](https://www.linkedin.com/in/sameer-atram-5a04322b2)
+Built by [Sameer Atram](https://github.com/sampro14) · Applied AI Engineer · [LinkedIn](https://www.linkedin.com/in/sameer-atram)

@@ -5,12 +5,13 @@
 **Invoice PDFs, scans and phone photos in. Validated, ERP-ready JSON out, approved only when two models and eight code-level checks agree.**
 
 [![checks](https://github.com/sampro14/invoiceiq/actions/workflows/eval.yml/badge.svg)](https://github.com/sampro14/invoiceiq/actions/workflows/eval.yml)
+[![Live demo](https://img.shields.io/badge/demo-try_it_live-059669)](https://invoiceiq-qraz.onrender.com)
 ![Python 3.12](https://img.shields.io/badge/python-3.12-3776AB)
 ![LangGraph](https://img.shields.io/badge/agent-LangGraph-1C3C3C)
 ![Try it without a key](https://img.shields.io/badge/API%20key-not%20needed%20to%20try-brightgreen)
 [![License: MIT](https://img.shields.io/badge/license-MIT-slategray)](LICENSE)
 
-**[▶ Try it in 30 seconds, no API key](#try-it-in-30-seconds-no-api-key)** · [How it works](#architecture) · [Design decisions](#design-decisions) · [Evaluation](#evaluation)
+**[▶ Live demo](https://invoiceiq-qraz.onrender.com)** (the free server sleeps when idle, so the first load can take up to a minute) · [Run it locally, no API key](#try-it-in-30-seconds-no-api-key) · [How it works](#architecture) · [Design decisions](#design-decisions) · [Evaluation](#evaluation)
 
 <img src="docs/assets/review.png" alt="A wrong-total invoice paused for human review: the graph path, the reason, the document and the extracted fields with confidence bars" width="860" />
 
@@ -27,6 +28,8 @@ Most invoice extractors return JSON and hope it is right. InvoiceIQ reads every 
 Every run shows its own confidence, rule checks, cost and latency, so you can see why a document was approved or sent to a person.
 
 ## Try it in 30 seconds, no API key
+
+The quickest way is the [live demo](https://invoiceiq-qraz.onrender.com): pick a sample, or upload an English PDF, PNG or JPG invoice without real personal details. To run it yourself instead:
 
 ```bash
 git clone https://github.com/sampro14/invoiceiq.git && cd invoiceiq
